@@ -1,0 +1,41 @@
+name: GitHub README Stats
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Stats Card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&theme=dracula&show_icons=true&hide=prs,issues,contribs
+          path: profile/stats_card.svg
+          token: ${{ secrets.README_STATS }}
+
+      - name: Generate Top Languages Card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&theme=dracula&show_icons=true&layout=compact&langs_count=10&hide=css
+          path: profile/top_languages_card.svg
+          token: ${{ secrets.README_STATS }}
+
+      - name: Commit Cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update README Cards" || exit 0
+          git push

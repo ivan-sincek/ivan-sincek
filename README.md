@@ -1,4 +1,4 @@
-Thanks for visiting my profile — I hope you find my projects useful!
+Thanks for visiting my profile - I hope you find my projects useful!
 
 ![Stats](./profile/stats_card.svg)
 

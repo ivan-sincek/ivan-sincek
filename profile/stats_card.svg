@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Ivan &#352;incek's GitHub Stats, Rank: B+</title>
-        <desc id="descId">Total Stars Earned: 4633, Total Commits  (last year) : 780</desc>
+        <desc id="descId">Total Stars Earned: 4634, Total Commits  (last year) : 780</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 103.801626567681;
+        stroke-dashoffset: 103.80143560541251;
       }
     }
   
